@@ -6,12 +6,17 @@ $green:			#92ca5d
 @import 'public/bower_components/bootstrap-sass/lib/bootstrap.scss'
 @import 'monosocialiconsfont.scss'
 
+html, body
+	width: 100%
+	overflow-x: hidden
+
 body
 	background-color: $blue_light
 	color: $black
 	font-family: "proxima-nova", sans-serif
 	font-size: 14px
 	margin: 50px 0
+	position: relative
 
 img.bottle
 	height: 620px
@@ -19,7 +24,30 @@ img.bottle
 	margin: 0 auto
 
 img.logo
-	margin-bottom: 20px
+	margin: 0 auto 40px
+
+p
+	text-align: justify
+	line-height: 1.6
+
+h3
+	text-align: center
+	font-weight: normal
+	text-transform: uppercase
+	font-size: 14px
+	letter-spacing: 2px
+	margin: 30px 0
+
+.flavors
+	.flavor
+		text-align: center
+		.icon 
+			height: 50px
+			margin-bottom: 10px
+			text-align: center
+			line-height: 50px
+			img
+				display: inline
 
 ul.social
 	background-color: $green
@@ -27,10 +55,15 @@ ul.social
 	padding: 10px 0 10px 10px
 	margin: -120px 0 0 0
 	position: absolute
-	right: 0
+	right: -52px
 	top: 50%
 	border-radius: 5px 0 0 5px
 	height: 237px
+	width: 52px
+	-webkit-animation: slide 0.5s forwards
+	-webkit-animation-delay: 0.5s
+	animation: slide 0.5s forwards
+	animation-delay: 0.5s
 
 	li
 		border-top: 2px dashed white
@@ -39,13 +72,21 @@ ul.social
 		&:first-child
 			border-top: 0
 
-a.symbol
-	background-color: inherit
-	color: white
-	font-size: 50px
-	padding: 0
-	&:before
-		margin: 0
-		font-size: inherit
-	&:hover
-		text-decoration: none
+		a.symbol
+			background-color: inherit
+			color: white
+			font-size: 50px
+			padding: 0
+			&:before
+				margin: 0
+				font-size: inherit
+			&:hover
+				text-decoration: none
+
+@-webkit-keyframes slide
+	100%
+		right: 0
+
+@keyframes slide
+	100%
+		right: 0

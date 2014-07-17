@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "bootstrap-sass": "~3.0.2",
-    "monosocialiconsfont": "*"
+    "monosocialiconsfont": "*",
+    "jquery": "~2.1.1"
   }
 }
