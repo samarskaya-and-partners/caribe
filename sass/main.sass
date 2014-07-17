@@ -53,6 +53,7 @@ h3
 .flavors
 	.flavor
 		text-align: center
+		margin-bottom: 20px
 		.icon 
 			height: 50px
 			margin-bottom: 10px
@@ -61,39 +62,42 @@ h3
 			img
 				display: inline
 
-ul.social
-	background-color: $green
-	list-style: none
-	padding: 10px 0 10px 10px
-	margin: -120px 0 0 0
-	position: absolute
-	right: -52px
-	top: 50%
-	border-radius: 5px 0 0 5px
-	height: 237px
-	width: 52px
-	-webkit-animation: slide 0.5s forwards
-	-webkit-animation-delay: 0.5s
-	animation: slide 0.5s forwards
-	animation-delay: 0.5s
+.social
+	position: static
 
-	li
-		border-top: 2px dashed white
-		padding: 0
-		height: 73px
-		&:first-child
-			border-top: 0
+	ul
+		background-color: $green
+		list-style: none
+		padding: 10px 0 10px 10px
+		margin: -120px 0 0 0
+		position: absolute
+		right: -52px
+		top: 50%
+		border-radius: 5px 0 0 5px
+		height: 237px
+		width: 52px
+		-webkit-animation: slide 0.5s forwards
+		-webkit-animation-delay: 0.5s
+		animation: slide 0.5s forwards
+		animation-delay: 0.5s
 
-		a.symbol
-			background-color: inherit
-			color: white
-			font-size: 50px
+		li
+			border-top: 2px dashed white
 			padding: 0
-			&:before
-				margin: 0
-				font-size: inherit
-			&:hover
-				text-decoration: none
+			height: 73px
+			&:first-child
+				border-top: 0
+
+			a.symbol
+				background-color: inherit
+				color: white
+				font-size: 50px
+				padding: 0
+				&:before
+					margin: 0
+					font-size: inherit
+				&:hover
+					text-decoration: none
 
 @-webkit-keyframes slide
 	100%
