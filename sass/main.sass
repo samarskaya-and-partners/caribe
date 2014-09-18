@@ -1,8 +1,4 @@
-$blue_light:	#d4e8ef
-$blue_dark:		#95c3dd
-$black: 		#262626
-$green:			#92ca5d
-
+@import 'colors.sass'
 @import 'public/bower_components/bootstrap-sass/lib/bootstrap.scss'
 @import 'monosocialiconsfont.scss'
 
@@ -12,20 +8,20 @@ html, body
 	overflow-x: hidden
 
 body
-	color: $black
+	color: $gray-text
 	font-family: "proxima-nova", sans-serif
 	font-size: 14px
 	margin: 0
 	position: relative
 
-	background: $blue_light /* Old browsers */
-	background: -moz-linear-gradient(top, $blue_light 0%, $blue_dark 100%) /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $blue_light), color-stop(100%, $blue_dark)) /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $blue_light 0%, $blue_dark 100%) /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $blue_light 0%, $blue_dark 100%) /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $blue_light 0%, $blue_dark 100%) /* IE10+ */
-	background: linear-gradient(to bottom, $blue_light 0%, $blue_dark 100%) /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$blue_light', endColorstr='$blue_dark',GradientType=0 ) /* IE6-9 */
+	background: $blue-top /* Old browsers */
+	background: -moz-linear-gradient(top, $blue-top 0%, $blue-bottom 100%) /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $blue-top), color-stop(100%, $blue-bottom)) /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $blue-top 0%, $blue-bottom 100%) /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $blue-top 0%, $blue-bottom 100%) /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $blue-top 0%, $blue-bottom 100%) /* IE10+ */
+	background: linear-gradient(to bottom, $blue-top 0%, $blue-bottom 100%) /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$blue-top', endColorstr='$blue-bottom',GradientType=0 ) /* IE6-9 */
 
 .container
 	margin: 50px auto
@@ -66,27 +62,25 @@ h3
 	position: static
 
 	ul
-		background-color: $green
+		background-color: $green-social
 		list-style: none
 		padding: 10px 0 10px 10px
 		margin: -120px 0 0 0
 		position: absolute
-		right: -52px
+		right: 0 //-52px
 		top: 50%
-		border-radius: 5px 0 0 5px
 		height: 237px
 		width: 52px
-		-webkit-animation: slide 0.5s forwards
-		-webkit-animation-delay: 0.5s
-		animation: slide 0.5s forwards
-		animation-delay: 0.5s
+		box-shadow:         -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
+
+		//-webkit-animation: slide 0.5s forwards
+		//-webkit-animation-delay: 0.5s
+		//animation: slide 0.5s forwards
+		//animation-delay: 0.5s
 
 		li
-			border-top: 2px dashed white
 			padding: 0
 			height: 73px
-			&:first-child
-				border-top: 0
 
 			a.symbol
 				background-color: inherit
