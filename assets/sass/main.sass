@@ -9,8 +9,7 @@ html, body
 
 body
 	color: $gray-text
-	font-family: "proxima-nova", sans-serif
-	font-size: 14px
+	font-size: 16px
 	margin: 0
 	position: relative
 
@@ -23,75 +22,127 @@ body
 	background: linear-gradient(to bottom, $blue-top 0%, $blue-bottom 100%) /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$blue-top', endColorstr='$blue-bottom',GradientType=0 ) /* IE6-9 */
 
-.container
-	margin: 50px auto
-	
-img.bottle
-	height: 620px
-	width: auto
-	margin: 0 auto
+body, h2, h4
+	font-family: "proxima-nova", sans-serif
 
-img.logo
-	margin: 0 auto 40px
-
-p
-	text-align: justify
-	line-height: 1.6
-
-h3
-	text-align: center
-	font-weight: normal
+h2
 	text-transform: uppercase
-	font-size: 14px
+	font-size: 24px
+	font-weight: 700
+	color: $blue-heading
+	text-align: center
 	letter-spacing: 2px
-	margin: 30px 0
 
-.flavors
-	.flavor
-		text-align: center
-		margin-bottom: 20px
-		.icon 
-			height: 50px
-			margin-bottom: 10px
-			text-align: center
-			line-height: 50px
-			img
-				display: inline
+.row
+	margin-bottom: 40px
 
-.social
-	position: static
+	&.navigation
 
-	ul
-		background-color: $green-social
-		list-style: none
-		padding: 10px 0 10px 10px
-		margin: -120px 0 0 0
-		position: absolute
-		right: 0 //-52px
-		top: 50%
-		height: 237px
-		width: 52px
-		box-shadow: -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
-
-		//-webkit-animation: slide 0.5s forwards
-		//-webkit-animation-delay: 0.5s
-		//animation: slide 0.5s forwards
-		//animation-delay: 0.5s
-
-		li
+		ul
+			border-bottom: 1px solid $gray-text
+			list-style-type: none
+			overflow: auto
 			padding: 0
-			height: 73px
+			margin: 20px 120px
 
-			a.symbol
-				background-color: inherit
-				color: white
-				font-size: 50px
-				padding: 0
-				&:before
-					margin: 0
-					font-size: inherit
-				&:hover
-					text-decoration: none
+			li
+				width: 25%
+				float: left
+				text-align: center
+				display: block
+
+				a
+					display: block
+					font-weight: 700
+					padding: 10px
+					text-transform: uppercase
+					color: $gray-text
+					letter-spacing: 2px
+	
+	&.logo, &.bottles
+		img
+			display: block
+			margin: 0 auto
+
+	&.logo
+		margin-bottom: 100px
+
+	&.about
+		.col-sm-12
+			background-color: $blue-container
+			padding: 40px 120px
+
+			p.about
+				margin: 0 80px 20px
+
+			#carousel
+				height: 440px
+				overflow-y: hidden
+				.item
+					width: 100%
+					img
+						width: 100%
+
+	&.flavors
+		h4
+			text-transform: uppercase
+			font-size: 14px
+			font-weight: 700
+			letter-spacing: 1px
+			margin-bottom: 6px
+
+		.flavor
+			padding-left: 50px
+			background-repeat: no-repeat
+			&.passion
+				background-image: url(/assets/img/fruit/passion.png)
+				h4
+					color: $fruit-passion
+			&.guava
+				background-image: url(/assets/img/fruit/guava.png)
+				h4
+					color: $fruit-guava
+			&.cherry
+				background-image: url(/assets/img/fruit/cherry.png)
+				h4
+					color: $fruit-cherry
+			&.star
+				background-image: url(/assets/img/fruit/star.png)
+				h4
+					color: $fruit-star
+
+
+ul.social
+	background-color: $green-social
+	list-style: none
+	padding: 10px 0 10px 10px
+	margin: -120px 0 0 0
+	position: fixed
+	right: 0 //-52px
+	top: 50%
+	height: 237px
+	width: 52px
+	box-shadow: -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
+
+	//-webkit-animation: slide 0.5s forwards
+	//-webkit-animation-delay: 0.5s
+	//animation: slide 0.5s forwards
+	//animation-delay: 0.5s
+
+	li
+		padding: 0
+		height: 73px
+
+		a.symbol
+			background-color: inherit
+			color: white
+			font-size: 50px
+			padding: 0
+			&:before
+				margin: 0
+				font-size: inherit
+			&:hover
+				text-decoration: none
 
 @-webkit-keyframes slide
 	100%

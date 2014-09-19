@@ -1,7 +1,9 @@
 //= include ../../bower_components/jquery/dist/jquery.js
+//= include ../../bower_components/bootstrap-sass/dist/js/bootstrap.js
 
 $(function(){
-	$("body").addClass("loaded");
+	$('#carousel').carousel();
+	//window.console.log('loaded');
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
