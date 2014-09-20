@@ -2,7 +2,7 @@
 //= include ../../bower_components/bootstrap-sass/dist/js/bootstrap.js
 
 $(function(){
-	$('#carousel').carousel();
+	$('.carousel').carousel();
 	//window.console.log('loaded');
 });
 
