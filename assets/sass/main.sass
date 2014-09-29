@@ -115,7 +115,10 @@ section
 	width: $column-width
 	margin: 0 auto $margin
 	position: relative
-
+	
+	&:last-child
+		margin-bottom: $margin / 2
+	
 	a.anchor
 		position: absolute
 		top: -#{$nav-height * 1.5}
@@ -198,17 +201,12 @@ section
 
 	&.contact
 		text-align: center
-		margin-bottom: 0
 		font-size: $text-lg
 		a
 			color: $gray-text
 
 	&.newsletter
-		padding-bottom: $margin
 
-		h2
-			font-size: $text-lg
-			color: $gray-text
 		p
 			text-transform: uppercase
 			font-size: $text-md
