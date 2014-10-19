@@ -17,7 +17,6 @@ $color-star:		#F27300
 $color-aloe:		#54B247
 
 $nav-height: 		90px
-$nav-line-height: 	120px
 $column-width: 		930px
 $margin: 			100px
 
@@ -69,16 +68,30 @@ nav
 	&#nav
 		left: 0
 		top: 0
-		height: $nav-height
 		background-color: $color-top
 		z-index: 20
 		text-align: center
+		border: 0
+
+		.navbar-nav
+			display: inline-block
+			float: none
+			vertical-align: top
+
+		.navbar-collapse
+			text-align: center
+
+		.navbar-toggle
+			border-color: $color-link
+			.icon-bar
+				background-color: $color-link
+
+			&:hover, &:focus
+				background-color: white
+				outline: none
 
 		a
-			height: $nav-height - 1
-			line-height: $nav-line-height
 			font-size: $text-md
-			padding: 0 51px
 			text-transform: uppercase
 			color: $color-link
 			letter-spacing: 2px
@@ -131,6 +144,8 @@ section
 		top: -#{$nav-height * 1.5}
 	
 	&.logo
+		padding-left: 15px
+		padding-right: 15px
 		img
 			margin: 40px auto
 	
@@ -138,14 +153,18 @@ section
 		ul
 			list-style-type: none
 			overflow: auto
-			padding: 0 $margin
+			padding: 0 15px 0 0
 			width: 918px
+			max-width: 100%
 			margin: 0 auto
 
 			li
 				width: 25%
+				padding-left: 15px
 				float: left
 				text-align: center
+
+
 	&.about
 		padding-top: $margin
 		background-color: $color-container
@@ -250,6 +269,7 @@ section
 
 		form
 			width: 500px
+			max-width: 100%
 			margin: 0 auto
 
 		input
@@ -270,3 +290,22 @@ section
 			&:focus
 				outline: 0
 				background-color: $color-top
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min)
+	nav#nav
+		height: $nav-height
+		ul li
+			margin-top: 40px
+			margin-left: 100px
+			&:first-child
+				margin-left: 0
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min)
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min)
