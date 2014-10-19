@@ -1,22 +1,31 @@
 @import '../../bower_components/bootstrap-sass/lib/bootstrap.scss'
 @import 'monosocialiconsfont.scss'
 
-$blue-top:			#d3e9ef
-$blue-bottom:		darken(#95c3dd, 20%)
-$blue-container:	#d5e8f1
-$blue-heading:		#0095de
-$gray-text: 		#555555
-$gray-rule: 		#aaaaaa
-$green-social:		#76bd1d
+$color-top:			#D3E9Ef
+$color-bottom:		#4897C4
+$color-container:	#D5E8f1
+$color-heading:		#0095DE
+$color-link:		#00A1DF
+$color-link-hover:	#FF7936
+$color-text: 		#555555
+$color-social:		#F8F0D1
+$color-newsletter:	#72BB59
+$color-passion:		#D58634
+$color-guava:		#E9A26F
+$color-cherry:		#C04233
+$color-star:		#E48A39
+$color-aloe:		#51B158
 
-$fruit-passion:		#d58634
-$fruit-guava:		#e9a26f
-$fruit-cherry:		#c04233
-$fruit-star:		#e48a39
-
-$nav-height: 		63px
+$nav-height: 		90px
+$nav-line-height: 	120px
 $column-width: 		930px
 $margin: 			100px
+
+$social-link-size:	47px
+$social-padding:	18px
+$social-border:		2px
+$social-width:		$social-link-size + ($social-padding * 2)
+$social-height:		($social-link-size * 3) + $social-padding + ($social-border * 2)
 
 $text-xl:			26px
 $text-lg:			20px
@@ -24,25 +33,23 @@ $text-md:			16px
 $text-sm:			14px
 
 html, body
-	width: 100%
-	height: 100%
-	overflow-x: hidden
+	min-height: 100%
 
 body
-	color: $gray-text
+	color: $color-text
 	margin: 0
-	padding: $nav-height 0 $margin
+	padding: $nav-height 0 200px
 	position: relative
 	font-size: $text-md
 
-	background: $blue-top /* Old browsers */
-	background: -moz-linear-gradient(top, $blue-top $nav-height, $blue-bottom 100%) /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $blue-top), color-stop(100%, $blue-bottom)) /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $blue-top $nav-height, $blue-bottom 100%) /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $blue-top $nav-height, $blue-bottom 100%) /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $blue-top $nav-height, $blue-bottom 100%) /* IE10+ */
-	background: linear-gradient(to bottom, $blue-top $nav-height, $blue-bottom 100%) /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$blue-top', endColorstr='$blue-bottom',GradientType=0 ) /* IE6-9 */
+	background: $color-top /* Old browsers */
+	background: -moz-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color-top), color-stop(100%, $color-bottom)) /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* IE10+ */
+	background: linear-gradient(to bottom, $color-top $nav-height, $color-bottom 100%) /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 ) /* IE6-9 */
 
 body, h2, h4
 	font-family: "proxima-nova", sans-serif
@@ -51,7 +58,7 @@ h2
 	text-transform: uppercase
 	font-size: $text-xl
 	font-weight: 700
-	color: $blue-heading
+	color: $color-heading
 	text-align: center
 	letter-spacing: 2px
 	margin: 0 0 $margin / 4
@@ -63,53 +70,59 @@ nav
 		left: 0
 		top: 0
 		height: $nav-height
-		background-color: $blue-top
+		background-color: $color-top
 		z-index: 20
+		text-align: center
 
-		div
-			overflow: hidden
-			margin: 0 auto
-			border-bottom: 1px solid $gray-rule
-			width: $column-width
-			a
-				height: $nav-height - 1
-				line-height: $nav-height
-				width: 25%
-				float: left
-				text-align: center
-				font-size: $text-md
-				font-weight: 700
-				padding: 0 10px
-				text-transform: uppercase
-				color: $gray-text
-				letter-spacing: 2px
+		a
+			height: $nav-height - 1
+			line-height: $nav-line-height
+			font-size: $text-md
+			padding: 0 51px
+			text-transform: uppercase
+			color: $color-link
+			letter-spacing: 2px
+			&:first-child
+				padding-left: 0
+			&:last-child
+				padding-right: 0
 
 	&#social
-		background-color: $green-social
+		background-color: $color-social
 		list-style: none
-		padding: 10px 0 10px 10px
-		margin: -120px 0 0 0
+		padding: $social-padding / 2 $social-padding
+		margin: -#{$social-height / 2} 0 0 0
 		top: 50%
-		height: 237px
-		width: 52px
+		height: $social-height
+		width: $social-width
+		border-radius: $social-padding 0 0 $social-padding
 		box-shadow: -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
 
 		a.symbol
 			background-color: inherit
-			color: white
+			color: $color-link
 			font-size: 50px
 			padding: 0
+			width: $social-link-size
+			height: $social-link-size
+			line-height: $social-link-size
+			display: block
+			border-top: $social-border dotted $color-link
+			text-align: center
+			&:first-child
+				border-top: 0
 			&:before
 				margin: 0
 				font-size: inherit
 			&:hover
 				text-decoration: none
+				color: $color-link-hover
 
 div.backing
-	background-color: $blue-container
+	background-color: $color-container
 	padding: $margin / 2 $margin
 	width: $column-width + ($margin * 2)
-	margin: 0 auto $margin / 2
+	margin: 0 auto
 
 section
 	width: $column-width
@@ -178,19 +191,23 @@ section
 				&.passion
 					background-image: url(/assets/img/fruit/passion.png)
 					h4
-						color: $fruit-passion
+						color: $color-passion
 				&.guava
 					background-image: url(/assets/img/fruit/guava.png)
 					h4
-						color: $fruit-guava
+						color: $color-guava
 				&.cherry
 					background-image: url(/assets/img/fruit/cherry.png)
 					h4
-						color: $fruit-cherry
+						color: $color-cherry
 				&.star
 					background-image: url(/assets/img/fruit/star.png)
 					h4
-						color: $fruit-star
+						color: $color-star
+				&.aloe
+					width: 100%
+					h4
+						color: $color-aloe
 
 
 	&.where
@@ -203,12 +220,17 @@ section
 		text-align: center
 		font-size: $text-lg
 		a
-			color: $gray-text
+			color: $color-text
 
 	&.newsletter
+		background-color: $color-newsletter
+		padding: $margin / 2 $margin
+		width: $column-width + ($margin * 2)
+
+		h2
+			color: white
 
 		p
-			text-transform: uppercase
 			font-size: $text-md
 			text-align: center
 			margin: 0 auto 20px
@@ -218,9 +240,9 @@ section
 			margin: 0 auto
 
 		input
-			border: 1px solid $gray-text
-			color: $gray-text
-			background-color: transparent
+			border: 1px solid white
+			color: $color-text
+			background-color: white
 			font-size: $text-lg
 			padding: 4px 10px
 			text-align: right
@@ -234,4 +256,4 @@ section
 				text-align: center
 			&:focus
 				outline: 0
-				background-color: $blue-top
+				background-color: $color-top

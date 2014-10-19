@@ -2,8 +2,21 @@
 //= include ../../bower_components/bootstrap-sass/dist/js/bootstrap.js
 
 $(function(){
+
+	//start up the carousel
 	$('.carousel').carousel();
-	//window.console.log('loaded');
+	
+	//set drop shadow on nav
+	function setNavShadow() {
+        var opacity = $(document).scrollTop();
+        opacity = (opacity > 100 ? 100 : opacity) / 100;
+        $('#nav').css('box-shadow', '0 5px 25px rgba(161, 184, 190, ' + opacity + ')');		
+	}
+
+	setNavShadow();
+	$(window).on('scroll', setNavShadow);
+
+
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
