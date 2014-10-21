@@ -77,18 +77,11 @@ nav
 			display: inline-block
 			float: none
 			vertical-align: top
+			padding-top: 45px
 
 		.navbar-collapse
 			text-align: center
-
-		.navbar-toggle
-			border-color: $color-link
-			.icon-bar
-				background-color: $color-link
-
-			&:hover, &:focus
-				background-color: white
-				outline: none
+			border-top: 0
 
 		a
 			font-size: $text-md
@@ -103,16 +96,26 @@ nav
 			&:last-child
 				padding-right: 0
 
+		button
+			background-color: transparent
+			border: 0
+			width: 23px
+			height: 26px
+			background-image: url(/assets/img/menu.svg)
+			background-position: center center
+			background-size: 23px 26px
+			position: absolute
+			right: 19px
+			top: 11px
+			&:focus
+				outline: 0
+
+
 	&#social
-		background-color: $color-social
-		list-style: none
-		padding: $social-padding / 2 $social-padding
-		margin: -#{$social-height / 2} 0 0 0
-		top: 50%
-		height: $social-height
-		width: $social-width
-		border-radius: $social-padding 0 0 $social-padding
-		box-shadow: -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
+		left: -10px
+		top: -5px
+		z-index: 100
+		width: 70%
 
 		a.symbol
 			background-color: inherit
@@ -123,16 +126,8 @@ nav
 			height: $social-link-size
 			line-height: $social-link-size
 			display: block
-			border-top: $social-border dotted $color-link
-			text-align: center
-			&:first-child
-				border-top: 0
-			&:before
-				margin: 0
-				font-size: inherit
-			&:hover
-				text-decoration: none
-				color: $color-link-hover
+			float: left
+			margin-right: 20px
 
 section
 	position: relative
@@ -141,7 +136,7 @@ section
 
 	a.anchor
 		position: absolute
-		top: -#{$nav-height * 1.5}
+		top: -245px
 	
 	&.logo
 		padding-left: 15px
@@ -185,11 +180,13 @@ section
 
 		.frame
 			background-color: white
-			padding: 15px
+			padding: 7px
 			margin: 0
 
 		ol.carousel-indicators
-			bottom: -50px
+			width: auto
+			bottom: -44px
+			margin-left: -35%
 
 	&.flavors, &.where
 		background-color: $color-container
@@ -300,15 +297,48 @@ section
 	body
 		padding-bottom: 200px
 		
-	nav#nav
-		height: $nav-height
-		ul li
-			margin-top: 40px
-			margin-left: 100px
-			&:first-child
-				margin-left: 0
+	nav
+		&#nav
+			height: $nav-height
+			ul.navbar-nav
+				padding-top: 0
+				li
+					margin-top: 40px
+					margin-left: 100px
+					&:first-child
+						margin-left: 0
+			button
+				display: none
+		&#social
+			background-color: $color-social
+			padding: $social-padding / 2 $social-padding
+			margin: -#{$social-height / 2} 0 0 0
+			top: 50%
+			right: 0
+			left: auto
+			height: $social-height
+			width: $social-width
+			border-radius: $social-padding 0 0 $social-padding
+			box-shadow: -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
+
+			a.symbol
+				border-top: $social-border dotted $color-link
+				text-align: center
+				margin-right: 0
+
+				&:first-child
+					border-top: 0
+				&:before
+					margin: 0
+					font-size: inherit
+				&:hover
+					text-decoration: none
+					color: $color-link-hover
 
 	section
+		a.anchor
+			top: -#{$nav-height * 1.5}
+			
 		&.about
 			p
 				margin-left: 40px
@@ -318,6 +348,13 @@ section
 			.frame
 				margin-left: 40px
 				margin-right: 40px
+				padding: 15px
+			
+			ol.carousel-indicators
+				width: 60%
+				bottom: -53px
+				margin-left: -30%
+
 
 		&.flavors, &.where
 			li
