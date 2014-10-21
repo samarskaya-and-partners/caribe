@@ -31,6 +31,17 @@ $text-lg:			20px
 $text-md:			16px
 $text-sm:			14px
 
+@mixin linear-gradient($from-color, $to-color, $offset:0px)
+	background: $from-color
+	background:    -moz-linear-gradient(top, $from-color $offset, $to-color 100%)
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($offset, $from-color), color-stop(100%, $to-color))
+	background: -webkit-linear-gradient(top, $from-color $offset, $to-color 100%)
+	background:      -o-linear-gradient(top, $from-color $offset, $to-color 100%)
+	background:     -ms-linear-gradient(top, $from-color $offset, $to-color 100%)
+	background:   linear-gradient(to bottom, $from-color $offset, $to-color 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from-color', endColorstr='$to-color',GradientType=0 )
+
+
 html, body
 	min-height: 100%
 
@@ -40,15 +51,7 @@ body
 	padding: $nav-height 0 0
 	position: relative
 	font-size: $text-md
-
-	background: $color-top /* Old browsers */
-	background: -moz-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color-top), color-stop(100%, $color-bottom)) /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $color-top $nav-height, $color-bottom 100%) /* IE10+ */
-	background: linear-gradient(to bottom, $color-top $nav-height, $color-bottom 100%) /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 ) /* IE6-9 */
+	@include linear-gradient($color-top, $color-bottom, $nav-height)
 
 body, h2, h4
 	font-family: "proxima-nova", sans-serif
@@ -96,26 +99,10 @@ nav
 			&:last-child
 				padding-right: 0
 
-		button
-			background-color: transparent
-			border: 0
-			width: 23px
-			height: 26px
-			background-image: url(/assets/img/menu.svg)
-			background-position: center center
-			background-size: 23px 26px
-			position: absolute
-			right: 19px
-			top: 11px
-			&:focus
-				outline: 0
-
-
 	&#social
 		left: -10px
 		top: -5px
 		z-index: 100
-		width: 70%
 
 		a.symbol
 			background-color: inherit
@@ -128,6 +115,21 @@ nav
 			display: block
 			float: left
 			margin-right: 20px
+
+		button
+			background-color: transparent
+			border: 0
+			width: 23px
+			height: 26px
+			background-image: url(/assets/img/menu.svg)
+			background-size: 23px 26px
+			position: absolute
+			right: 19px
+			top: 16px
+			padding: 0
+			&:focus
+				outline: 0
+
 
 section
 	position: relative
@@ -145,6 +147,7 @@ section
 			margin: 40px auto
 	
 	&.bottles
+		@include linear-gradient(transparent, $color-container)
 		ul
 			list-style-type: none
 			overflow: auto
@@ -307,8 +310,6 @@ section
 					margin-left: 100px
 					&:first-child
 						margin-left: 0
-			button
-				display: none
 		&#social
 			background-color: $color-social
 			padding: $social-padding / 2 $social-padding
@@ -321,6 +322,9 @@ section
 			border-radius: $social-padding 0 0 $social-padding
 			box-shadow: -4px 4px 10px 0px rgba(50, 50, 50, 0.2)
 
+			button
+				display: none
+				
 			a.symbol
 				border-top: $social-border dotted $color-link
 				text-align: center
@@ -338,7 +342,7 @@ section
 	section
 		a.anchor
 			top: -#{$nav-height * 1.5}
-			
+
 		&.about
 			p
 				margin-left: 40px
