@@ -141,7 +141,7 @@ section
 		padding-left: 15px
 		padding-right: 15px
 		img
-			margin: 40px auto
+			margin: 0 auto
 	
 	&.bottles
 		ul
@@ -167,7 +167,6 @@ section
 
 
 	&.about
-		padding-top: $margin
 		background-color: $color-top
 		p
 			margin: 0 0 $margin / 4
@@ -208,6 +207,14 @@ section
 			font-weight: 700
 			letter-spacing: 1px
 			margin-bottom: 6px
+
+			small
+				color: inherit
+				text-transform: none
+				display: block
+				font-weight: inherit
+				font-size: inherit
+				line-height: 1.7
 		ul
 			padding: 0
 			li
@@ -340,10 +347,15 @@ section
 		a.anchor
 			top: -#{$nav-height * 1.5}
 
+		&.logo
+			img
+				margin: 40px auto
+
 		&.bottles
 			@include linear-gradient(rgba(255, 255, 255, 0), $color-top, 0%)
 
 		&.about
+			padding-top: $margin
 			p
 				margin-left: 40px
 				margin-right: 40px
